@@ -7,8 +7,12 @@ export const Profile = (): JSX.Element => {
     const [authenticatedUser, ] = useContext(UserContext)
 
     return (
-        <div>
-            <img src={'https://thispersondoesnotexist.com/image'} alt={'error...'} />
+        <div className="profilewrapper">
+            <img
+                className="profileimg" 
+                src={'https://thispersondoesnotexist.com/image'} 
+                alt={'error...'} 
+            />
             <span>{authenticatedUser}</span>
             <ProfileDropDown />
         </div>

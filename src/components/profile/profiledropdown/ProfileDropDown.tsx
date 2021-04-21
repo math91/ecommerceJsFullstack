@@ -15,8 +15,7 @@ export const ProfileDropDown = () => {
     }
 
     return (
-        <div>
-            <br />
+        <div className="profileDropdownWrapper">
             <span>Firstname Lastname</span>
             <span>Email</span>
             <hr/>
