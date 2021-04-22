@@ -6,7 +6,6 @@ import RoutingPath from "../../routes/RoutingPath"
 export const SignInView = () => {
     const history = useHistory()
     const [authenticatedUser, setAuthenticatedUser] = useContext(UserContext)
-    const [username, setUsername] = useState<String>("")
     const [userData, setUserData] = useState<any>({username: "", password: ""})
 
     const updateUserData = (type: string, value: string) => {
