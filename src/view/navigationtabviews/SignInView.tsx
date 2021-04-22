@@ -10,14 +10,7 @@ export const SignInView = () => {
     const [userData, setUserData] = useState<any>({username: "", password: ""})
 
     const updateUserData = (type: string, value: string) => {
-        setUserData(() => {
-            return (
-                {
-                    ...userData,
-                    [type]: value
-                }
-            )
-        })
+        setUserData({...userData, [type]: value})
     }
 
     const signIn = () => {
