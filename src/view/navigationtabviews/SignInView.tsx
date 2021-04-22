@@ -7,10 +7,22 @@ export const SignInView = () => {
     const history = useHistory()
     const [authenticatedUser, setAuthenticatedUser] = useContext(UserContext)
     const [username, setUsername] = useState<String>("")
+    const [userData, setUserData] = useState<any>({username: "", password: ""})
+
+    const updateUserData = (type: string, value: string) => {
+        setUserData(() => {
+            return (
+                {
+                    ...userData,
+                    [type]: value
+                }
+            )
+        })
+    }
 
     const signIn = () => {
-        setAuthenticatedUser(username)
-        localStorage.setItem('userName', `${username}`)
+        setAuthenticatedUser(userData.username)
+        localStorage.setItem('userName', `${userData.username}`)
         history.push(RoutingPath.homeView)
     }
 
@@ -19,13 +31,22 @@ export const SignInView = () => {
         return (
             <div>
                 <input
-                    onChange={event => setUsername(event.target.value)}
+                    onChange={event => updateUserData("username", event.target.value)}
+                />
+                 <input
+                    onChange={event => updateUserData("password", event.target.value)}
                 />
                 <button
                     onClick={signIn}
                 >
                     Logga in
                 </button>
+                <button
+                    onClick={() => console.log(userData)}
+                >
+                    Test in console log
+                </button>
+                <h1>{userData.username}</h1>
             </div>
         )
     }

@@ -5,13 +5,13 @@ import {useState} from "react"
 import {BackDrop} from "../../backdrop/BackDrop"
 
 export const MobileNavigation = () => {
-    const [openDrawer, setOpenDrawer] = useState<boolean>(true)
+    const [openDrawer, setOpenDrawer] = useState<boolean>(false)
 
     return (
         <>
             <HamburgerButton drawerHandler={setOpenDrawer} />
             <Sidebar drawerIsOpen={openDrawer} drawerHandler={setOpenDrawer} />
-            {!openDrawer || <BackDrop />}
+            {!openDrawer || <BackDrop drawerHandler={setOpenDrawer} />}
         </>
     )
 }
