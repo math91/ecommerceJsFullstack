@@ -6,6 +6,7 @@ const shopView: string = "/shop"
 const profileView: string = "/profile"
 const settingsView: string = "/settings"
 const savedProductsView: string = "/savedproducts"
+const itemDetailView: string = "/itemdetail"
 
 export default {
     homeView,
@@ -15,5 +16,6 @@ export default {
     shopView,
     profileView,
     settingsView,
-    savedProductsView
+    savedProductsView,
+    itemDetailView
 }

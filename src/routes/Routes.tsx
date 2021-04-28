@@ -10,6 +10,7 @@ import { SavedProductsView } from "../view/profiledropdownviews/SavedProductsVie
 import { SettingsView } from "../view/profiledropdownviews/SettingsView"
 import RoutingPath from "./RoutingPath"
 import { UserContext } from "../shared/provider/UserProvider"
+import { ItemDetail } from "../view/navigationtabviews/ItemDetail"
 
 export const Routes = (props: { children?: React.ReactChild }) => {
     const [authenticatedUser, setAuthenticatedUser] = useContext(UserContext)
@@ -42,6 +43,7 @@ export const Routes = (props: { children?: React.ReactChild }) => {
                 <Route exact path={RoutingPath.profileView} component={authenticatedRequired(ProfileView)} />
                 <Route exact path={RoutingPath.savedProductsView} component={authenticatedRequired(SavedProductsView)} />
                 <Route exact path={RoutingPath.settingsView} component={authenticatedRequired(SettingsView)} />
+                <Route exact path={RoutingPath.itemDetailView} component={ItemDetail} />
                 <Route component={HomeView} />
             </Switch>
         </BrowserRouter>
