@@ -12,15 +12,15 @@ export const ProfileView = () => {
  
     const displayData = () => {
         return (
-            serverResponse.map((person: any) => <h1>{person.username}</h1>)
+            serverResponse.map((person: any) => <li key={person.username}>{person.username}</li>)
         )
     }
 
     return (
         <>
             <h1>Profile View</h1>
-            <button onClick={fetchData}>Klick</button>
-            <h2>{displayData()}</h2>
+            <button onClick={fetchData}>Hämta användare från API</button>
+            <ul>{displayData()}</ul>
         </>
     )
 }
