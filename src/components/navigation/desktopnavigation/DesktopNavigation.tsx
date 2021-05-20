@@ -7,7 +7,7 @@ import {UserContext} from "../../../shared/provider/UserProvider"
 import {Profile} from "../../../components/profile/Profile"
 
 export const DesktopNavigation = () => {
-    const [authenticatedUser, ] = useContext<any>(UserContext)
+    const [authenticatedUser, ] = useContext(UserContext)
     const history = useHistory()
 
     const displayAuthUserSignIn = () => {
